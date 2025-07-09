@@ -1,0 +1,23 @@
+#Potentiometer connected to A0
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);
+  smartDelay(1.0); // Wait 1 second
+
+  digitalWrite(LED_BUILTIN, LOW);
+  smartDelay(1.0); // Wait again
+}
+
+void smartDelay(float seconds) {
+  unsigned long duration = (unsigned long)(seconds * 1000);
+  unsigned long start = millis();
+
+  while (millis() - start < duration) {
+    Serial.println(analogRead(A0));
+  }
+}
