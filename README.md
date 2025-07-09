@@ -1,4 +1,4 @@
-#smartDelay() – Bitwave#
+📘smartDelay() – Bitwave
 ⚙️ What is it?
 An Arduino/ESP32 function that acts like delay, but doesn't block the rest of your code.
 
