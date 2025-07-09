@@ -1,0 +1,13 @@
+// smartDelay by Bitwave
+// Works like delay(), but lets the rest of your code breathe
+
+void smartDelay(float seconds) {
+  unsigned long duration = (unsigned long)(seconds * 1000);
+  unsigned long start = millis();
+
+  while (millis() - start < duration) {
+    // ⚙️ Non-blocking zone
+    // You can read sensors, check buttons, etc.
+    // Just don't put delay() in here!
+  }
+}
